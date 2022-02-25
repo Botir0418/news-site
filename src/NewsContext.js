@@ -9,9 +9,11 @@ export const NewsContextProvider = (props) => {
   useEffect(() => {
     axios
       .get(
-        `http://gorest.co.in/public/v1/posts`
+        `https://gorest.co.in/public/v1/posts`
       )
-      .then((response) => setData(response.data))
+      .then((response) => 
+      setData(response.data.data)
+      )
       .catch((error) => console.log(error));
   }, []);
 
